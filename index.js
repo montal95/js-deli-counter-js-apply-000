@@ -8,5 +8,6 @@ const nowServing = (currentLine) => {
     return 'There is nobody waiting to be served!';
   }
   let name = currentLine[0];
-  
+  currentLine.shift();
+  return `Currently serving ${name}`;
 }

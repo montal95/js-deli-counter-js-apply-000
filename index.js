@@ -9,5 +9,5 @@ const nowServing = (currentLine) => {
   }
   let name = currentLine[0];
   currentLine.shift();
-  return `Currently serving ${name}`;
+  return `Currently serving ${name}.`;
 }

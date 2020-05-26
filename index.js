@@ -16,9 +16,9 @@ const currentLine = queue => {
   if(queue.length === 0) {
     return 'The line is currently empty.';
   }
-  let result='';
+  let result='The line is currently: ';
   for(let i = 0; i < queue.length; i++) {
-    result = `${result}${(i === 0) ? `1.${queue[i]}`: `, ${i+1}. ${queue[i]}`}
+    result = `${result}${(i === 0) ? `1. ${queue[i]}`: `, ${i+1}. ${queue[i]}`}
     `
   }
   return result;

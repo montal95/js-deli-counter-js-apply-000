@@ -19,7 +19,7 @@ const currentLine = queue => {
   let result='The line is currently: ';
   for(let i = 0; i < queue.length; i++) {
     let tempStr = (i === 0) ? `1. ${queue[i]}`: `, ${i+1}. ${queue[i]}`;
-    result.concat(tempStr);
+    result = result.concat(tempStr);
   }
   return result;
 }

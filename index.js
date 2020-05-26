@@ -1,13 +1,26 @@
-const takeANumber = (currentLine, name) => {
-  currentLine.push(name);
-  return `Welcome, ${name}. You are number ${currentLine.length} in line.`;
+const takeANumber = (queue, name) => {
+  queue.push(name);
+  return `Welcome, ${name}. You are number ${queue.length} in line.`;
 }
 
-const nowServing = (currentLine) => {
-  if(currentLine.length === 0) {
+const nowServing = (queue) => {
+  if(queue.length === 0) {
     return 'There is nobody waiting to be served!';
   }
-  let name = currentLine[0];
-  currentLine.shift();
+  let name = queue[0];
+  queue.shift();
   return `Currently serving ${name}.`;
+}
+
+const currentLine = queue => {
+  if(queue.length === 0) {
+    return 'The line is currently empty.';
+  }
+  let result='';
+  for(let i = 0; i < queue.length; i++) {
+    result.append(
+      (i === 0) ? `1. ${queue[i]}`: `, ${i+1}. ${queue[i]}`
+    )
+  }
+  return result;
 }
